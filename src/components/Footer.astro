@@ -1,0 +1,21 @@
+---
+import { site } from '../data/site';
+import Brand from './Brand.astro';
+
+interface Props {
+  home?: boolean;
+  compact?: boolean;
+  currentPath?: string;
+}
+
+const { home = false, compact = false, currentPath } = Astro.props;
+---
+
+<footer class="site-footer page-width">
+  {!compact && <Brand footer />}
+  <p>{site.brandName} is the brand name of {site.legalName}.<br />© 2026 {site.legalName}. All rights reserved.</p>
+  <nav aria-label="Footer navigation">
+    <a href="/privacy" aria-current={currentPath === '/privacy' ? 'page' : undefined}>Privacy</a>
+    <a href={home ? '#contact' : '/#contact'}>Contact</a>
+  </nav>
+</footer>

@@ -1,0 +1,26 @@
+---
+import { site } from '../data/site';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProductSection from '../components/ProductSection.astro';
+import ApproachSection from '../components/ApproachSection.astro';
+import CompanySection from '../components/CompanySection.astro';
+import ContactSection from '../components/ContactSection.astro';
+---
+
+<SiteLayout
+  title={`${site.brandName} — Useful things. Thoughtfully built.`}
+  description={`${site.brandName} is the brand of ${site.legalName}. We build thoughtful technology products for everyday life and work, including Walk n Sit, coming soon to iPhone.`}
+  ogDescription={`A home for thoughtful technology products. Meet ${site.brandName}, the company behind Walk n Sit.`}
+  path="/"
+  loadSiteScript
+  organizationSchema
+>
+  <main id="main">
+    <Hero />
+    <ProductSection />
+    <ApproachSection />
+    <CompanySection />
+    <ContactSection />
+  </main>
+</SiteLayout>

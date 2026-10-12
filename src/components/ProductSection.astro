@@ -1,0 +1,35 @@
+---
+import { site } from '../data/site';
+
+const features = [
+  'Sitting, standing, and walking timers that fit your day.',
+  'Reminders to step away and take a break.',
+  'Movement summaries to help you see your routine.',
+];
+---
+
+<section class="products page-width" id="products" aria-labelledby="products-title">
+  <div class="section-rule">
+    <h2 class="eyebrow" id="products-title">From {site.brandName}</h2>
+    <span class="eyebrow">01 / Our products</span>
+  </div>
+  <div class="product-feature">
+    <div class="product-art">
+      <span class="product-art-top">A little more movement.</span>
+      <div class="movement-pattern" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <img class="app-icon" src="/assets/walk-n-sit.png" width="144" height="144" alt="Walk n Sit app icon: a white walking figure on a purple background" loading="lazy" decoding="async" />
+      <div class="product-art-bottom"><span>Walk n Sit</span><span>Sit. Stand. Walk.</span></div>
+    </div>
+    <div class="product-copy">
+      <div class="product-heading"><h3>Walk n Sit</h3><span class="status"><span aria-hidden="true"></span>Coming soon</span></div>
+      <p class="product-statement">Make room<br />for movement.</p>
+      <p class="body-copy">A calm movement companion for iPhone. Set a sitting interval, get a reminder to stand, and make room for a short walk.</p>
+      <ul class="product-features">
+        {features.map((feature, index) => (
+          <li><span class="feature-number">{String(index + 1).padStart(2, '0')}</span><span>{feature}</span></li>
+        ))}
+      </ul>
+      <p class="release-note">Walk n Sit is not yet available on the App Store. We’ll share its release here when it’s ready.</p>
+    </div>
+  </div>
+</section>

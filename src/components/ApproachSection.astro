@@ -1,0 +1,30 @@
+---
+const principles = [
+  {
+    title: 'Start with a real need.',
+    description: 'A product should have a clear reason to exist. We focus on problems people recognise in their own lives.',
+  },
+  {
+    title: 'Make the details count.',
+    description: 'Clear interfaces, considered interactions, and straightforward functionality. The small things shape the experience.',
+  },
+  {
+    title: 'Keep making it better.',
+    description: 'Building is an ongoing practice. We aim to learn from use, refine what matters, and make each product more useful over time.',
+  },
+];
+---
+
+<section class="approach page-width" aria-labelledby="approach-title">
+  <div class="section-rule"><p class="eyebrow">How we think</p><span class="eyebrow">02 / Our approach</span></div>
+  <div class="section-intro"><h2 id="approach-title">Good software starts<br />with paying attention.</h2><p>Our work begins with everyday needs. We look for where technology can be useful, then put care into how it works and how it feels to use.</p></div>
+  <div class="principles">
+    {principles.map((principle, index) => (
+      <article>
+        <span class="principle-mark" aria-hidden="true">{String(index + 1).padStart(2, '0')} —</span>
+        <h3>{principle.title}</h3>
+        <p>{principle.description}</p>
+      </article>
+    ))}
+  </div>
+</section>

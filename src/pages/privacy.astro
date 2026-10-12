@@ -1,0 +1,54 @@
+---
+import { site } from '../data/site';
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout
+  title={`Website privacy — ${site.brandName}`}
+  description={`How ${site.legalName}, trading under the ${site.brandName} brand, handles information on this website and in company enquiries.`}
+  ogDescription={`Information about website privacy and contacting ${site.brandName}.`}
+  path="/privacy"
+>
+  <main class="document-main page-width" id="main">
+    <a class="text-link back-link" href="/"> <span aria-hidden="true">←</span> Back to {site.brandName}</a>
+    <header class="document-heading">
+      <p class="eyebrow">Website information</p>
+      <h1>Privacy, plainly.</h1>
+      <p class="document-date">Last updated: {site.updatedDate}</p>
+    </header>
+    <div class="document-layout">
+      <aside class="document-aside">
+        <p>This notice covers this website and correspondence sent to our company email.</p>
+        <p>{site.legalName}<br />{site.brandName}</p>
+      </aside>
+      <div class="document-body">
+        <section>
+          <h2>Who operates this website</h2>
+          <p>This website is operated by {site.legalName} under the {site.brandName} brand. For questions about this notice or how your information is handled, email <a href={site.emailHref}>{site.email}</a>.</p>
+        </section>
+        <section>
+          <h2>When you browse</h2>
+          <p>You can read this website without creating an account or submitting personal information. The website does not include advertising, analytics scripts, contact forms, or a mailing-list signup. Its code does not set cookies or use browser storage to track visitors.</p>
+          <p>Our hosting provider, Vercel, may process technical information such as IP addresses, browser details, and requests to operate, deliver, and protect the website. You can read more in <a href="https://vercel.com/legal/privacy-policy">Vercel’s privacy policy</a>.</p>
+        </section>
+        <section>
+          <h2>When you email us</h2>
+          <p>If you send us an email, we receive your email address and the information you choose to include. We use that information to respond to your enquiry and manage the correspondence. Our email provider processes messages to deliver and store them.</p>
+          <p>Please only include information that is relevant to your enquiry. You do not need to send health records, identity documents, or other sensitive information to ask about our products.</p>
+        </section>
+        <section>
+          <h2>Questions about your information</h2>
+          <p>You can contact <a href={site.emailHref}>{site.email}</a> to ask about personal information you have shared with us, or to request access, correction, or deletion. We will consider your request in line with applicable requirements and any records we need to retain.</p>
+        </section>
+        <section>
+          <h2>Our products</h2>
+          <p>This notice applies to the {site.brandName} website. Walk n Sit is not yet available on the App Store. Its product-specific privacy information will be provided separately before release.</p>
+        </section>
+        <section>
+          <h2>Changes to this notice</h2>
+          <p>If the website or how we handle enquiries changes, we will update this page and its date so you can see the current information.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</SiteLayout>

@@ -1,0 +1,24 @@
+---
+import Brand from './Brand.astro';
+
+interface Props {
+  home?: boolean;
+  compact?: boolean;
+}
+
+const { home = false, compact = false } = Astro.props;
+const homePath = home ? '' : '/';
+---
+
+<header class="site-header page-width">
+  <Brand />
+  {compact ? (
+    <a class="text-link" href="/">Back to home <span aria-hidden="true">↗</span></a>
+  ) : (
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href={`${homePath}#products`}>Products</a>
+      <a href={`${homePath}#company`}>Company</a>
+      <a class="nav-contact" href={`${homePath}#contact`}>Get in touch <span aria-hidden="true">↗</span></a>
+    </nav>
+  )}
+</header>

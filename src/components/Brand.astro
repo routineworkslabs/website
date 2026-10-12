@@ -1,0 +1,15 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  footer?: boolean;
+}
+
+const { footer = false } = Astro.props;
+const name = site.brandName.replace(/\s+Labs$/i, '');
+---
+
+<a class:list={['brand', { 'footer-brand': footer }]} href="/" aria-label={`${site.brandName} home`}>
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="brand-name">{name}<span>LABS</span></span>
+</a>

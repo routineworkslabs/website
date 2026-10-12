@@ -1,0 +1,12 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="contact page-width" id="contact" aria-labelledby="contact-title">
+  <div><p class="eyebrow">04 / Get in touch</p><h2 id="contact-title">Let’s talk.</h2></div>
+  <div class="contact-copy">
+    <p>For product questions, company enquiries, or a conversation about working together, get in touch.</p>
+    <a class="contact-email" href={site.emailHref}>{site.email} <span aria-hidden="true">↗</span></a>
+    <p class="contact-detail">Your message goes to {site.brandName} at {site.legalName}.</p>
+  </div>
+</section>

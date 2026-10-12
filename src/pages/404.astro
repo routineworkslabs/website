@@ -1,0 +1,19 @@
+---
+import { site } from '../data/site';
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout
+  title={`Page not found — ${site.brandName}`}
+  description={`This page could not be found. Return to ${site.brandName}.`}
+  path="/404"
+  noindex
+  compactChrome
+>
+  <main class="not-found page-width" id="main">
+    <p class="eyebrow">404 / Page not found</p>
+    <h1>A little<br />out of place.</h1>
+    <p>We couldn’t find that page. Let’s get you back to something useful.</p>
+    <a class="solid-link" href="/">Return to home <span aria-hidden="true">↗</span></a>
+  </main>
+</SiteLayout>

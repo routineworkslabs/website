@@ -1,0 +1,23 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="company-section" id="company" aria-labelledby="company-title">
+  <div class="company-content page-width">
+    <div class="company-label">
+      <p class="eyebrow">03 / The company</p>
+      <div class="company-motif" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="company-copy">
+      <h2 id="company-title">Different ideas.<br />One thoughtful home.</h2>
+      <p>{site.brandName} is a technology company building products for everyday life and work.</p>
+      <p>It is the brand name of <strong>{site.legalName}</strong>, the registered company behind our products. Each product can have its own purpose and personality, with {site.brandName} as the company behind it.</p>
+      <p>Walk n Sit is part of that work: a focused app built around the simple idea of making room for movement during the day.</p>
+      <dl class="company-details">
+        <div><dt>Registered company</dt><dd>{site.legalName}</dd></div>
+        <div><dt>Company brand</dt><dd>{site.brandName}</dd></div>
+        <div><dt>Website</dt><dd>{site.domain}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>

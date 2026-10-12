@@ -1,0 +1,71 @@
+---
+import { site } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogDescription?: string;
+  noindex?: boolean;
+  compactChrome?: boolean;
+  loadSiteScript?: boolean;
+  organizationSchema?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  ogDescription = description,
+  noindex = false,
+  compactChrome = false,
+  loadSiteScript = false,
+  organizationSchema = false,
+} = Astro.props;
+const home = path === '/';
+const canonical = `${site.url}${path}`;
+const organization = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.brandName,
+  legalName: site.legalName,
+  url: `${site.url}/`,
+  email: site.email,
+  description: 'A technology company building thoughtful software products for everyday life and work.',
+}).replace(/</g, '\\u003c');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f1e9" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {!noindex && (
+      <>
+        <link rel="canonical" href={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={site.brandName} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:url" content={canonical} />
+      </>
+    )}
+    {home && <meta name="twitter:card" content="summary" />}
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    {loadSiteScript && <script is:inline src="/assets/site.js" defer></script>}
+    {organizationSchema && <script is:inline type="application/ld+json" set:html={organization}></script>}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header home={home} compact={compactChrome} />
+    <slot />
+    <Footer home={home} compact={compactChrome} currentPath={path} />
+  </body>
+</html>
