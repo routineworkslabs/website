@@ -1,0 +1,23 @@
+{
+  "name": "routine-works-labs-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Routine Works Labs company website",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "node scripts/validate-config.mjs && astro build",
+    "preview": "node scripts/serve.mjs",
+    "check": "astro check && node scripts/check.mjs"
+  },
+  "dependencies": {
+    "astro": "7.3.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "6.0.3"
+  }
+}

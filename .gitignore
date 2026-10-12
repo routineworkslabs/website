@@ -1,0 +1,10 @@
+dist/
+node_modules/
+.astro/
+.vercel/
+.openai/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
