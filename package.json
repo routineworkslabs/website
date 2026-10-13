@@ -9,11 +9,13 @@
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
-    "build": "node scripts/validate-config.mjs && astro build",
+    "build": "node scripts/validate-config.mjs && astro build && node scripts/check.mjs",
     "preview": "node scripts/serve.mjs",
     "check": "astro check && node scripts/check.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
     "astro": "7.3.8"
   },
   "devDependencies": {

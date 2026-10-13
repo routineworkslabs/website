@@ -1,0 +1,13 @@
+---
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+
+const enabled = import.meta.env.PROD && import.meta.env.VERCEL === '1';
+---
+
+{enabled && (
+  <>
+    <Analytics />
+    <SpeedInsights />
+  </>
+)}

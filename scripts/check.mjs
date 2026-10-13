@@ -14,6 +14,7 @@ const attribute = (tag, name) => {
 const fail = (message) => failures.push(message);
 const exists = async (filename) => { try { await access(filename); return true; } catch { return false; } };
 const absoluteSource = (relative) => path.join(output, relative);
+const analyticsEnabled = process.env.VERCEL === '1';
 
 async function main() {
   if (!await exists(absoluteSource('index.html'))) throw new Error('Build the site first: npm run build.');
@@ -68,6 +69,12 @@ async function main() {
   }
 
   for (const [filename, { html }] of pages) {
+    for (const element of ['vercel-analytics', 'vercel-speed-insights']) {
+      const count = [...html.matchAll(new RegExp(`<${element}\\b`, 'g'))].length;
+      if (count !== (analyticsEnabled ? 1 : 0)) {
+        fail(`${filename}: expected ${analyticsEnabled ? 'one' : 'no'} ${element} integration in this build.`);
+      }
+    }
     if (/{{|}}/.test(html)) fail(`${filename}: unresolved template token.`);
     if (!/<html\b[^>]*\blang=["']en["']/i.test(html)) fail(`${filename}: expected html lang="en".`);
     if (!/<title>[^<]+<\/title>/i.test(html)) fail(`${filename}: missing page title.`);
@@ -106,7 +113,7 @@ async function main() {
     console.error(`Site checks failed (${failures.length}):\n${failures.map((message) => `- ${message}`).join('\n')}`);
     process.exitCode = 1;
   } else {
-    console.log(`Checked ${pages.size} pages: local links, anchors, metadata, templates, app availability claims, and deployment settings passed.`);
+    console.log(`Checked ${pages.size} pages: local links, anchors, metadata, external scripts, analytics (${analyticsEnabled ? 'Vercel' : 'off'}), app availability claims, and deployment settings passed.`);
     if (!config.email) console.warn('This is a draft check. A confirmed public email is still required for a production build.');
   }
 }
