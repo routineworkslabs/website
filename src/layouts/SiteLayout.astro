@@ -2,7 +2,10 @@
 import { site } from '../data/site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { inject } from '@vercel/analytics';
 import '../styles/global.css';
+
+inject();
 
 interface Props {
   title: string;
