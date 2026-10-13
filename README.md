@@ -17,6 +17,16 @@ npm run dev
 
 Open the URL shown by Astro (normally `http://127.0.0.1:4321`). Changes to pages, components, and CSS update in the browser while you work.
 
+## Branches and pull requests
+
+Use `dev` for development and `main` for reviewed production changes. Push focused commits to `dev`, then open a pull request with `dev` as the source and `main` as the base. Include the purpose of the change, validation results, and a preview or screenshots when the page appearance changes. A PR template supplies these prompts.
+
+Wait for the owner's review and explicit merge instruction. Do not push directly to `main` or enable auto-merge. After a PR is merged, fetch and synchronize `dev` with `origin/main` before starting the next change. Preserve uncommitted work and avoid force-pushing shared history.
+
+Vercel's Git integration may build previews when `dev` is pushed. Keep `main` configured as the production branch, and review the relevant preview before merging visible changes. A successful preview does not mean the production site has been updated.
+
+These are repository working conventions; they do not enable GitHub branch protection or required approvals. Manage those separately in the repository settings if enforcement is needed.
+
 ## Build and review
 
 ```sh
@@ -43,7 +53,7 @@ The production build requires a company name, hostname, public email, and update
 
 ## Deploy on Vercel
 
-Deployment is performed by the site owner. This project does not deploy itself.
+The site owner controls deployment and production merges. Vercel's Git integration can automatically deploy a push or merge to the configured production branch, so review changes through a pull request before merging into `main`.
 
 1. Import your Git repository into Vercel. If the repository contains the parent workspace, set **Root Directory** to `website`. If this folder is the repository root, leave Root Directory at its default.
 2. Select the **Astro** framework preset and Node.js **24.x**. The included `vercel.json` specifies **Build Command** `npm run build` and **Output Directory** `dist`. Vercel installs the dependencies from `package-lock.json`. No environment variables, server adapter, or runtime services are required.
