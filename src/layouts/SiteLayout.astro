@@ -2,6 +2,7 @@
 import { site } from '../data/site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 import '../styles/global.css';
 
 interface Props {
@@ -67,5 +68,6 @@ const organization = JSON.stringify({
     <Header home={home} compact={compactChrome} />
     <slot />
     <Footer home={home} compact={compactChrome} currentPath={path} />
+    <SpeedInsights />
   </body>
 </html>
