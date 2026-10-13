@@ -1,0 +1,68 @@
+---
+import { site } from '../../data/site';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const updated = '13 October 2026';
+---
+
+<SiteLayout
+  title={`Walk n Sit support — ${site.brandName}`}
+  description={`Help with Walk n Sit, the sit, stand, and walk timer for iPhone from ${site.brandName}.`}
+  ogDescription="Help with Walk n Sit: reminders, walks, standing, Apple Health, and your data."
+  path="/walknsit/support"
+>
+  <main class="document-main page-width" id="main">
+    <a class="text-link back-link" href="/"> <span aria-hidden="true">←</span> Back to {site.brandName}</a>
+    <header class="document-heading">
+      <p class="eyebrow">Walk n Sit</p>
+      <h1>How can we help?</h1>
+      <p class="document-date">Last updated: {updated}</p>
+    </header>
+    <div class="document-layout">
+      <aside class="document-aside">
+        <p>Questions, problems, or ideas? Email <a href={site.emailHref}>{site.email}</a> and tell us what happened and which iPhone and iOS version you use.</p>
+        <p>Walk n Sit runs on iPhone with iOS 16.4 or later. It is not yet available on the App Store.</p>
+        <p><a class="text-link" href="/walknsit/privacy">Walk n Sit privacy</a></p>
+      </aside>
+      <div class="document-body">
+        <section>
+          <h2>Getting started</h2>
+          <p>On Today, choose how long you’ll sit and start the timer. When it ends, Walk n Sit reminds you to stand up: take a walk, take a standing break, snooze for five minutes, or keep sitting. To start a walk or a stand at any time, use the Move tab and pick Walk or Stand.</p>
+        </section>
+        <section>
+          <h2>I’m not getting reminders</h2>
+          <p>Make sure notifications are allowed in Settings › Notifications › Walk n Sit, and that Time Sensitive Notifications is on there, so reminders can come through a Focus. If the app shows “Alerts are off” on a running timer, tap Turn on to open these settings.</p>
+          <p>To get reminders on your Apple Watch, let your iPhone lock. iOS forwards notifications to the watch only while the iPhone is locked, which is why Walk n Sit keeps the screen awake only while you stand (you can turn that off in Settings).</p>
+        </section>
+        <section>
+          <h2>Answering from the Lock Screen or Apple Watch</h2>
+          <p>Press and hold a reminder on the Lock Screen, or scroll down on your watch, to answer without opening the app: “I’m up” starts a stand at the length you used last, “Walk” starts a walk, and the snooze options give you a few more minutes.</p>
+        </section>
+        <section>
+          <h2>Standing breaks and standing desk</h2>
+          <p>A stand of up to 15 minutes is a standing break: it counts toward your daily breaks and your move time. A longer stand, from 20 minutes to an hour, is for working at a standing desk: it counts as one break, and its minutes appear as standing at your desk rather than move time. When it ends, Walk n Sit suggests sitting down or taking a walk.</p>
+        </section>
+        <section>
+          <h2>Timers on hold</h2>
+          <p>Starting a walk while you’re sitting doesn’t end your sit. It pauses and waits on hold, and you can resume it when you’re back. Anything still on hold at midnight ends automatically and is saved with the time it actually ran.</p>
+        </section>
+        <section>
+          <h2>Why does a walk show “≈” or “steps not measured”?</h2>
+          <p>Walk n Sit measures walks with your iPhone’s Motion &amp; Fitness data. Without that access, walks use an estimate, marked with “≈”. You can allow it in Settings › Privacy &amp; Security › Motion &amp; Fitness. “Steps not measured” means the iPhone didn’t count steps during the walk, usually because it stayed behind while you walked.</p>
+        </section>
+        <section>
+          <h2>Why isn’t a walk in Apple Health?</h2>
+          <p>Walk n Sit saves a walk to Apple Health only when saving is turned on, Health access is allowed, and the walk was measured: at least a minute of actual walking, with no more than a minute of pauses. It saves the minutes you actually walked as a walking workout. Estimates are never saved.</p>
+        </section>
+        <section>
+          <h2>The app looks out of date</h2>
+          <p>Walk n Sit downloads small updates when it opens and applies them the next time it opens. To get the latest version, close the app completely and open it again twice.</p>
+        </section>
+        <section>
+          <h2>Your data</h2>
+          <p>Your timers and history stay on your iPhone. You can delete your saved history in Settings › Clear session history; a timer that is running or on hold isn’t affected. If we ask for diagnostics to look into a problem, Settings › About › Share diagnostics creates a report you can send us; it doesn’t include your history or Health information. Read the <a href="/walknsit/privacy">Walk n Sit privacy policy</a> for details.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</SiteLayout>

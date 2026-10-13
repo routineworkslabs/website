@@ -1,0 +1,78 @@
+---
+import { site } from '../../data/site';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const updated = '13 October 2026';
+---
+
+<SiteLayout
+  title={`Walk n Sit privacy — ${site.brandName}`}
+  description={`How Walk n Sit, made by ${site.legalName}, handles your information: your routine stays on your iPhone.`}
+  ogDescription="Walk n Sit privacy: no account, no ads, no tracking. Your routine stays on your iPhone."
+  path="/walknsit/privacy"
+>
+  <main class="document-main page-width" id="main">
+    <a class="text-link back-link" href="/"> <span aria-hidden="true">←</span> Back to {site.brandName}</a>
+    <header class="document-heading">
+      <p class="eyebrow">Walk n Sit</p>
+      <h1>Your routine stays on your iPhone.</h1>
+      <p class="document-date">Last updated: {updated}</p>
+    </header>
+    <div class="document-layout">
+      <aside class="document-aside">
+        <p>This policy covers the Walk n Sit app for iPhone. Walk n Sit is not yet available on the App Store.</p>
+        <p>{site.legalName}<br />{site.brandName}</p>
+        <p><a class="text-link" href="/walknsit/support">Walk n Sit support</a></p>
+      </aside>
+      <div class="document-body">
+        <section>
+          <h2>Who we are</h2>
+          <p>Walk n Sit is made by {site.legalName}, which trades as {site.brandName}. For questions about this policy or your information, email <a href={site.emailHref}>{site.email}</a>.</p>
+        </section>
+        <section>
+          <h2>The short version</h2>
+          <p>Walk n Sit has no account and no sign-in. It shows no ads, contains no analytics or advertising tools, and does not track you across apps or websites. Your timers, history, and settings are kept on your iPhone, and we do not receive them. We do not sell personal information.</p>
+        </section>
+        <section>
+          <h2>What stays on your iPhone</h2>
+          <p>The app stores your sit, stand, and walk timers (when each started and ended, and how long it ran), your daily goals, your settings, and your walk measurements in its own storage on your iPhone. Its widgets and Live Activity read the same information through storage shared only between the app and its widgets on your device.</p>
+        </section>
+        <section>
+          <h2>Motion &amp; Fitness</h2>
+          <p>If you allow Motion &amp; Fitness access, Walk n Sit reads the steps and distance your iPhone records during the walks you time, so it can measure them. This happens on your iPhone, and the readings are not sent to us. If you don’t allow access, walks use an estimate based on your walking pace. You can change this at any time in Settings › Privacy &amp; Security › Motion &amp; Fitness.</p>
+        </section>
+        <section>
+          <h2>Apple Health</h2>
+          <p>Saving to Apple Health is optional. If you turn it on and allow access, Walk n Sit saves the walks you finish as walking workouts: each one’s start and end time and its measured distance. It only writes these workouts. It does not ask to read, and does not read, any of your Health data.</p>
+          <p>Information from Apple Health is never used for advertising, never shared with us, and never sold. You can stop saving at any time in the app’s settings or in the Health app, and you can delete saved workouts in the Health app.</p>
+        </section>
+        <section>
+          <h2>Notifications</h2>
+          <p>Reminders such as “Time to stand up” are scheduled on your iPhone. The app does not use push notifications from a server. If you use an Apple Watch, iOS may show the same reminders on your watch.</p>
+        </section>
+        <section>
+          <h2>App updates</h2>
+          <p>To receive fixes and improvements between App Store releases, the app checks Expo’s update service (EAS Update, operated by 650 Industries, Inc.) for new versions. These requests include technical information needed to deliver the right update, such as the app version, platform, update channel, and a random identifier for this installation, along with your IP address. If the app failed to start, the next request can also include that error’s message and the identifiers of updates that failed to launch, so a faulty update can be detected and fixed. These requests don’t include your timers, history, or Health information. See <a href="https://expo.dev/privacy">Expo’s privacy policy</a>.</p>
+        </section>
+        <section>
+          <h2>Diagnostics you choose to share</h2>
+          <p>Settings › About › Share diagnostics creates a plain-text report with the app version, your notification settings, counts of how reminders were handled, and recent error messages. It is created only when you tap it, and you choose where to send it. It doesn’t include your history or Health information. This report is never sent automatically.</p>
+          <p>If you have chosen to share analytics with app developers in your iPhone’s settings, Apple may also provide us with crash reports and usage information under Apple’s privacy policy.</p>
+        </section>
+        <section>
+          <h2>Your choices</h2>
+          <p>You can delete your saved history in Settings › Clear session history; a timer that is running or on hold isn’t affected. Deleting the app removes the information it stores on your iPhone. Workouts already saved to Apple Health stay there until you delete them in the Health app.</p>
+          <p>Because your Walk n Sit information stays on your iPhone, we don’t hold a copy to access, correct, or delete. If you have shared something with us by email, you can contact <a href={site.emailHref}>{site.email}</a> to ask about it or to request access, correction, or deletion.</p>
+        </section>
+        <section>
+          <h2>Children</h2>
+          <p>Walk n Sit is not directed to children, and we do not knowingly collect personal information from children.</p>
+        </section>
+        <section>
+          <h2>Changes to this policy</h2>
+          <p>If Walk n Sit or how it handles information changes, we will update this page and its date so you can see the current information.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</SiteLayout>
