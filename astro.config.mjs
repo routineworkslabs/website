@@ -11,5 +11,8 @@ export default defineConfig({
     format: 'file',
     inlineStylesheets: 'never',
   },
+  vite: {
+    build: { assetsInlineLimit: 0 },
+  },
   devToolbar: { enabled: false },
 });
