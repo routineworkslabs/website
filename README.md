@@ -1,6 +1,6 @@
 # Routine Works Labs website
 
-An **Astro** company website for **Routine Works Labs**, the brand of **Routine Works LTD**, at **routineworkslabs.com**. Walk n Sit is presented as coming soon, with no store or download link before release.
+An **Astro** company website for **Routine Works Labs**, the brand of **Routine Works LTD**, at **www.routineworkslabs.com**. Walk n Sit is presented as coming soon, with no store or download link before release.
 
 Astro generates static HTML and CSS, so the deployed site needs no application server or database. Shared layouts and components make it straightforward to add products and pages. The site uses local assets and has no external fonts, third-party scripts, analytics, contact form, or application cookies. The privacy page covers hosting logs and company email separately.
 
@@ -48,7 +48,7 @@ Deployment is performed by the site owner. This project does not deploy itself.
 1. Import your Git repository into Vercel. If the repository contains the parent workspace, set **Root Directory** to `website`. If this folder is the repository root, leave Root Directory at its default.
 2. Select the **Astro** framework preset and Node.js **24.x**. The included `vercel.json` specifies **Build Command** `npm run build` and **Output Directory** `dist`. Vercel installs the dependencies from `package-lock.json`. No environment variables, server adapter, or runtime services are required.
 3. Deploy and review the Vercel preview URL, including `/privacy` and a nonexistent path.
-4. In **Settings → Domains**, add `routineworkslabs.com` and follow the DNS values Vercel displays for your project. Optionally add `www.routineworkslabs.com` and redirect it to the primary domain. Keep `site.config.json` aligned with the primary domain.
+4. In **Settings → Domains**, use `www.routineworkslabs.com` as the primary domain and redirect `routineworkslabs.com` to it. Follow the DNS values Vercel displays for your project. Keep `site.config.json` aligned with the primary domain so canonical URLs, structured data, robots, and sitemap URLs use the final destination.
 5. Verify the public domain loads over HTTPS without authentication or access restrictions. Check the contact link, page titles, navigation, privacy page, and mobile layout again.
 
 Keep existing mail-related DNS records when connecting the website. Website deployment does not create an email mailbox; `hello@routineworkslabs.com` must be configured with your email provider separately if it is not already active.
